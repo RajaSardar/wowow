@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 exports.getSearchController = (req, res, next) => {
     // let quary = req.query
     let q = req.query.q;
+    // console.log({ q });
     let t = req.query.t;
     let device = req.query.device;
     let safesearch = req.query.safesearch;
@@ -19,7 +20,7 @@ exports.getSearchController = (req, res, next) => {
             }
             else {
                 let totalItems = data.data.result.items;
-                res.render('user/result', { pageTitle: `${q} - WoWoW Search`, items: totalItems })
+                res.render('user/result', { pageTitle: `${q} - WoWoW Search`, items: totalItems, qury: q })
             }
         });
 
