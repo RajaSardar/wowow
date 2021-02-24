@@ -8,6 +8,8 @@ const fs = require('fs');
 
 const adminRoute = require('./routes/admin');
 const userRoute = require('./routes/user');
+const { get404Error } = require('./controllers/error');
+
 
 const app = express();
 
@@ -26,12 +28,14 @@ app.use(
     })
 );
 app.use(compression());
+app.use(morgan('combined', { stream: accessLogStream }))
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(adminRoute);
 app.use(userRoute);
+app.use(get404Error);
 
 app.listen(process.env.PORT || 5000, function () {
     console.log("Express is working on port ");
