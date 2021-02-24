@@ -16,4 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(adminRoute);
 app.use(userRoute);
 
-app.listen(5000);
+app.listen(process.env.PORT || 5000, function () {
+    var port = server.address().port;
+    console.log("Express is working on port " + port);
+});
