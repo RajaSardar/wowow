@@ -7,12 +7,25 @@
         <%= pageTitle %>
     </title>
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/result.css">
 
 </head>
 
 <body>
     <main>
+        <div class="search resultInput">
+            <a href="/"><img src="/img/logo.png" alt="WoWoW"></a>
+            <form action="search" method="get" class="form">
+                <input type="search" name="q" id="q" />
+                <input type="hidden" value="web" name="t" id="t" />
+                <input type="hidden" value="desktop" name="device" id="device" />
+                <input type="hidden" value="1" name="safesearch" id="safesearch" />
+                <input type="hidden" value="en_IN" name="locale" id="locale" />
+                <input type="hidden" value="4" name="uiv" id="uiv" />
+                <button class="btn" type="submit"></button>
+            </form>
+        </div>
         <% for(var i=0; i <items.length; i++) { %>
             <div class="results">
                 <img src="<%= items[i].favicon ? items[i].favicon : ''  %>"
@@ -23,7 +36,7 @@
                         <%= items[i].title %>
                     </h3>
                 </a>
-                <a href="<%= items[i].url %>">
+                <a href="<%= items[i].url %>" class="urlstyle">
                     <%= items[i].url %>
                 </a>
                 <p>

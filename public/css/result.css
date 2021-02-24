@@ -1,9 +1,15 @@
+body,h3,a,p {
+    padding: 0;
+    margin: 0;
+}
+
 .results {
     /* width: 3rem; */
     padding: 0.5rem;
     border: 0.5px solid gray;
     border-radius: 15px;
     width: 40%;
+    min-width: 320px;
     margin: 5px auto;
 }
 .results img {
@@ -16,4 +22,20 @@
 }
 .title + a {
     display: block;
+}
+.urlstyle {
+    width: inherit;
+}
+.resultInput {
+    /* display: flex;
+    flex-direction: column; */
+
+}
+.resultInput img {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    padding-bottom: 20px;
 }

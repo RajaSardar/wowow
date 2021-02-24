@@ -71,7 +71,7 @@ a:focus {
   top: 39.3%;
   z-index: 12;
 }
-.wrapper .duck {
+.duck {
   background-image: url("/img/logo.png");
   background-size: 250px 200px;
   background-position: 50% 50%;
@@ -87,7 +87,7 @@ a:focus {
   margin-top: -1.25em;
   text-indent: -9999px;
 }
-.wrapper .search {
+.search {
   box-sizing: border-box;
   display: block;
   float: none;
@@ -98,7 +98,7 @@ a:focus {
   padding: 1.9em 0.8em 0;
   margin-top: 1.8em;
 }
-.wrapper .search form {
+.search form {
   background-color: #fff;
   font-size: 1.14em;
   padding-left: 0.75em;
@@ -111,7 +111,7 @@ a:focus {
   border: 0.5px solid #d9d9d9;
   box-shadow: 0 2px 3px rgba(0,0,0,0.06);
 }
-.wrapper .search form input {
+.search form input {
   font-size: 1.2em;
   font-weight: 300;
   color: #333;
@@ -126,7 +126,7 @@ a:focus {
   top: -1px;
   outline: 0;
 }
-.wrapper .search form .btn {
+.search form .btn {
   box-sizing: content-box;
   color: rgba(0,0,0,0.33);
   border: none;
@@ -150,12 +150,12 @@ a:focus {
   left: auto;
   outline: none;
 }
-.wrapper .search form .btn:hover {
+.search form .btn:hover {
   background-color: #66ad57;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/icon--search-white.svg");
   background-size: 28px;
 }
-.wrapper .search form .btn:active {
+.search form .btn:active {
   background-color: #333;
 }
 .wrapper .message {
@@ -166,6 +166,6 @@ a:focus {
   line-height: 1.4;
   font-size: 1.4em;
 }
-.wrapper .message span {
+.message span {
   color: #9a9a9a;
 }
