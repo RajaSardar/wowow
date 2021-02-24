@@ -1,7 +1,10 @@
 {
   "name": "wowow",
   "version": "1.0.0",
-  "description": "",
+  "description": "Search Engine",
+  "engines": {
+    "node": "^12.14.1"
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
