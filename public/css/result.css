@@ -1,0 +1,19 @@
+.results {
+    /* width: 3rem; */
+    padding: 0.5rem;
+    border: 0.5px solid gray;
+    border-radius: 15px;
+    width: 40%;
+    margin: 5px auto;
+}
+.results img {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+}
+.title {
+    display: inline-block;
+}
+.title + a {
+    display: block;
+}
