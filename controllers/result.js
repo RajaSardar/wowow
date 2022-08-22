@@ -10,7 +10,7 @@ exports.getSearchController = (req, res, next) => {
     let locale = req.query.locale;
     let uiv = req.query.uiv;
 
-    fetch(`https://api.qwant.com/api/search/web?q=${q}&t=${t}&device=${device}&safesearch=${safesearch}&locale=${locale}&uiv=${uiv}`)
+    fetch(`https://api.qwant.com/v3/search/web?q=${q}&count=10&locale=de_DE&offset=0&device=${device}&safesearch=${safesearch}`)
         .catch(err => console.log(err))
         .then(response => response.json())
         .then(data => {
