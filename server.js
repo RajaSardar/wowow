@@ -38,5 +38,5 @@ app.use(userRoute);
 app.use(get404Error);
 
 app.listen(process.env.PORT || 5000, function () {
-    console.log("Express is working on port ");
+    console.log("Express is working on port http://localhost:"+`${process.env.PORT||5000}`);
 });

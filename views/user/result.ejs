@@ -28,19 +28,19 @@
         </div>
         <% for(var i=0; i <items.length; i++) { %>
             <div class="results">
-                <img src="<%= items[i].favicon ? items[i].favicon : ''  %>"
-                    alt="<%= items[i].favicon ? items[i].title : '' %>">
+                <!-- <img src="<%= items[i].favicon ? items[i].favicon : ''  %>"
+                    alt="<%= items[i].favicon ? items[i].title : '' %>"> -->
 
-                <a href="<%= items[i].url %>" class="title">
+                <a href="<%= items[i].link %>" class="title">
                     <h3>
                         <%= items[i].title %>
                     </h3>
                 </a>
-                <a href="<%= items[i].url %>" class="urlstyle">
-                    <%= items[i].url %>
+                <a href="<%= items[i].link %>" class="urlstyle">
+                    <%= items[i].link %>
                 </a>
                 <p>
-                    <%= items[i].desc %>
+                    <%= items[i].snippet %>
                 </p>
             </div>
             <% } %>
