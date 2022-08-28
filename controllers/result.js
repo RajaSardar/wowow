@@ -88,7 +88,8 @@ exports.getSearchController = (req, res, next) => {
             console.log(data);
             if(data && data.items && (data.items.length > 0)){
                 let totalItems = data.items;
-                res.render('user/result', { pageTitle: `${searchTerms} - WoWoW Search`, items: totalItems, searchInformation: data.searchInformation,nextPage: data.queries.nextPage, query:searchTerms })
+                console.log( { pageTitle: `${searchTerms} - WoWoW Search`, items: totalItems, searchInformation: data.searchInformation,nextPage: data.queries.nextPage[0], query:searchTerms, request:data.queries.request[0] })
+                res.render('user/result', { pageTitle: `${searchTerms} - WoWoW Search`, items: totalItems, searchInformation: data.searchInformation,nextPage: data.queries.nextPage[0], query:searchTerms, request:data.queries.request[0],mainReq:req.query })
             }else{
                 console.log({data})
                 res.send(data);

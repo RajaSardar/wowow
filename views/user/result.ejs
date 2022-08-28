@@ -17,12 +17,24 @@
         <div class="search resultInput">
             <a href="/"><img src="/img/logo.png" alt="WoWoW"></a>
             <form action="search" method="get" class="form">
-                <input type="search" name="q" id="q" value="<%=query %>" />
-                <input type="hidden" value="web" name="t" id="t" />
-                <input type="hidden" value="desktop" name="device" id="device" />
+                <input type="search" name="q" id="q" />
+                <input type="hidden" value="10" name="num" id="num" />
+                <input type="hidden" value="0" name="start" id="start" />
+                <input type="hidden" value="off" name="safe" id="safe" />
+                <input type="hidden" value="661804612aed641d0" name="cx" id="cx" />
+                <input type="hidden" value="1" name="filter" id="filter" />
+                <input type="hidden" value="IN" name="gl" id="gl" />
+                <input type="hidden" value="1" name="c2coff" id="c2coff" />
+                <input type="hidden" value="en" name="hl" id="hl" />
+                <input type="hidden" value="1" name="lowRange" id="lowRange" />
+                <input type="hidden" value="100" name="highRange" id="highRange" />
+                <input type="hidden" value="color" name="imgColorType" id="imgColorType" />
+                <input type="hidden" value="json" name="alt" id="alt" />
+                <!-- <input type="hidden" value="desktop" name="device" id="device" />
                 <input type="hidden" value="1" name="safesearch" id="safesearch" />
                 <input type="hidden" value="en_IN" name="locale" id="locale" />
-                <input type="hidden" value="4" name="uiv" id="uiv" />
+                <input type="hidden" value="4" name="uiv" id="uiv" /> -->
+                <button class="btn" type="submit"></button>
                 <button class="btn" type="submit"></button>
             </form>
         </div>
@@ -43,10 +55,24 @@
                     <%= items[i].snippet %>
                 </p>
             </div>
-            <% } %>
-        <div>
-            
-        </div>
+        <% } %>
+            <div class="pagination">
+                <% let pageStart = mainReq.start ? parseInt(mainReq.start) : 0 %>
+                <% for(var j=1; j<6; j++) { %>
+                    <% console.log(mainReq.start,"mainReq.start") %>
+                    <% pageStart = ((j==1) && (!pageStart)) ? 0 : ((j!=1) && (!pageStart)) ? 11 : (pageStart+10) %>
+                    <!-- <a href="#">&laquo;</a> -->
+                    <% let url =`/search?q=${mainReq.q}&num=${parseInt(mainReq.num)}&start=${pageStart}&safe=${mainReq.safe}&cx=${mainReq.cx}&filter=${mainReq.filter}&gl=${mainReq.gl}&c2coff=${mainReq.c2coff}&hl=${mainReq.hl}&lowRange=${mainReq.lowRange}&highRange=${mainReq.highRange}&imgColorType=${mainReq.imgColorType}&alt=${mainReq.alt}`;console.log(url,"testurl") %>
+                    
+                    <% if(pageStart == parseInt(mainReq.start)){ %>
+                        <a href="" class="active" > <%= j %> </a>
+                    <% } %>
+                    <% if(pageStart != parseInt(mainReq.start)){ %>
+                        <a href=<%= url %> ><%= j %></a>
+                    <% } %>
+                    <!-- <a href="#">&raquo;</a> -->
+                <%  } %>
+            </div>
     </main>
 </body>
 <script>
