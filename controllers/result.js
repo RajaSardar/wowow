@@ -2,7 +2,8 @@ const fetch = require('node-fetch');
 
 exports.getSearchController = (req, res, next) => {
     console.log(req.query);
-    let key = "AIzaSyAGs0klP0BCIvNPyZ562G_RIEI4-wv2www"; // This is the key from Google Developer Console for custom search 
+    // let key = "AIzaSyAGs0klP0BCIvNPyZ562G_RIEI4-wv2www"; // This is the key from Google Developer Console for custom search 
+    let key = "AIzaSyBOHSIkR4xS5M361OtVSDyyqcMeN0kGYh4"; // This is the key from Google Developer Console for custom search 
     let searchTerms = req.query.q; // This is the query keyword
     let count = req.query.num; // This is the number 
     let startIndex = req.query.start;

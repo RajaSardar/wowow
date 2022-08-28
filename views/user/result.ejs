@@ -60,7 +60,7 @@
                 <% let pageStart = mainReq.start ? parseInt(mainReq.start) : 0 %>
                 <% for(var j=1; j<6; j++) { %>
                     <% console.log(mainReq.start,"mainReq.start") %>
-                    <% pageStart = ((j==1) && (!pageStart)) ? 0 : ((j!=1) && (!pageStart)) ? 11 : (pageStart+10) %>
+                    <% pageStart = ((j==1) && (!pageStart)) ? 0 : ((j!=1) && (!pageStart)) ? 11 : ((j==1) && (pageStart)) ? pageStart : (pageStart+10) %>
                     <!-- <a href="#">&laquo;</a> -->
                     <% let url =`/search?q=${mainReq.q}&num=${parseInt(mainReq.num)}&start=${pageStart}&safe=${mainReq.safe}&cx=${mainReq.cx}&filter=${mainReq.filter}&gl=${mainReq.gl}&c2coff=${mainReq.c2coff}&hl=${mainReq.hl}&lowRange=${mainReq.lowRange}&highRange=${mainReq.highRange}&imgColorType=${mainReq.imgColorType}&alt=${mainReq.alt}`;console.log(url,"testurl") %>
                     
